@@ -56,13 +56,8 @@ class Painel extends CI_Controller
 
         $this->load->view("painel_barra_navegacao_view");
 
-        if (count($url) == 2) {
-            $this->load->view("painel_produtos_listar_view",
-                array("produtos" => $produtos));
-        } else {
-            echo "<br><br>Não é listar!!!!!!<br><br>";
-            echo "Ele quer " . $url[2] . " o produto " . $url[3] . "<br><br>";
-        }
+        $this->load->view("painel_produtos_listar_view",
+            array("produtos" => $produtos));
 
         $this->load->view("rodape_view");
     }
@@ -80,5 +75,16 @@ class Painel extends CI_Controller
         $this->produto_model->editar($url[3], $preco, $url[5], $url[2]);
 
         redirect(site_url("painel/produto"));
+    }
+
+    public function excluir()
+    {
+        $url = explode("/", uri_string());
+
+        $this->load->model("produto_model");
+        $this->produto_model->remover($url[2]);
+
+        redirect(site_url("painel/produto"));
+
     }
 }

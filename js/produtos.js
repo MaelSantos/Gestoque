@@ -14,13 +14,7 @@ function editar(btnEditar, url) {
         let preco = colunaPreco.querySelector('input').value;
         let quantidade = colunaQuantidade.querySelector('input').value;
 
-        // let url = '../controle/controle_cliente.php';
-        // let params = 'op=buscaid&nome=0&cpf=0&email=0&telefone=0&login=0&senha=0';
-        // xhr.open("POST", url, true);
-        // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        // xhr.send(params);
         window.location.replace(url + '/' + nome + '/' + preco + '/' + quantidade);
-        // window.location.replace(url);
 
         colunaNome.innerHTML = nome;
         colunaPreco.innerHTML = preco;

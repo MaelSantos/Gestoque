@@ -23,7 +23,7 @@
                     <td class="col_quanti"><?=$produto->quantidade;?></td>
                     <td>
                         <a class='btn btn-secondary' id="btnEditar" onclick="editar(this, '<?=site_url('painel/editar/'.$produto->idProduto);?>');" href="javascript:void(0)">Editar</a>
-                        <a class='btn btn-secondary' id="btnExcluir" href="<?=site_url('painel/produto/excluir/'.$produto->idProduto);?>">Excluir</a>
+                        <a class='btn btn-secondary' id="btnExcluir" href="<?=site_url('painel/excluir/'.$produto->idProduto);?>">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach;?>

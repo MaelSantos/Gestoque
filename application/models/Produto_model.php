@@ -25,6 +25,11 @@ class Produto_model extends CI_Model {
         }
     }
 
+    public function remover($id=NULL)
+    {
+        $this->db->delete('produtos', array('idProduto'=>$id));
+    }
+
     // public function get_last_ten_entries()
     // {
     //         $query = $this->db->get('entries', 10);
