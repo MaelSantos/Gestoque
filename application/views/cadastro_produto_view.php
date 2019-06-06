@@ -1,8 +1,8 @@
         <div class="container">
             <div class="row">
                 <div class="col col-md-12">
-                    <h3>Autenticação</h3>
-                    <form action="<?=site_url('produto/cadastrar');?>" method="POST">
+                    <h3>Cadastro Produto</h3>
+                    <form action="<?=site_url('painel/cadastrar');?>" method="POST">
                         <div class="form-group">
                             <label for="nome">Nome</label>
                             <input type="text" name="nome" class="form-control" id="nome" aria-describedby="nomeProduto" placeholder="Nome">
@@ -18,7 +18,7 @@
                             <input type="text" name="quantidade" class="form-control" id="quantidade" aria-describedby="quantidadeProduto" placeholder="Quantidade">
                             <!-- <small id="nomeProduto" class="form-text text-muted">O nome de usuário é o que identifica você =).</small> -->
                         </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
                 </div>
             </div>

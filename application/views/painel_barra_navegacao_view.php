@@ -15,7 +15,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?=site_url("painel/produto");?>">Listar</a>
-          <a class="dropdown-item" href="<?=site_url("painel/produto/cadastrar");?>">Cadastrar</a>
+          <a class="dropdown-item" href="<?=site_url("painel/cadastro");?>">Cadastrar</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Quem sabe no futuro?</a>
         </div>

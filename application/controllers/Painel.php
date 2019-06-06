@@ -38,14 +38,7 @@ class Painel extends CI_Controller
         echo uri_string();
         $url = explode("/", uri_string());
 
-        switch (count($url)) {
-            case 0:
-                $titulo = "Listar Produtos";
-                break;
-            default:
-                $titulo = "Não é listar";
-                break;
-        }
+        $titulo = "Listar Produtos";
 
         $this->load->view("cabecalho_view",
             array("titulo" => "Painel - ${titulo} - Sistema de Estoque")
@@ -60,6 +53,27 @@ class Painel extends CI_Controller
             array("produtos" => $produtos));
 
         $this->load->view("rodape_view");
+    }
+
+    public function cadastro()
+    {
+        $this->load->view("cabecalho_view",
+            array("titulo" => "Painel - {titulo} - Sistema de Estoque")
+        );
+
+        $this->load->view("painel_barra_navegacao_view");
+
+        $this->load->view("cadastro_produto_view");
+
+        $this->load->view("rodape_view");
+    }
+
+    public function cadastrar(){
+
+        $this->load->model("produto_model");
+        $this->produto_model->salvar();
+
+        redirect(site_url("painel/produto"));
     }
 
     public function editar()

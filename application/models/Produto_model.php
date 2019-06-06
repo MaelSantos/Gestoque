@@ -1,33 +1,44 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Produto_model extends CI_Model {
+class Produto_model extends CI_Model
+{
 
-    public $id;
+    public $idProduto;
     public $nome;
     public $preco;
     public $quantidade;
 
-    public function listar() {
+    public function salvar()
+    {
+        $this->nome       = $_POST['nome']; // please read the below note
+        $this->preco      = $_POST['preco'];
+        $this->quantidade = $_POST['quantidade'];
+
+        $this->db->insert('produtos', $this);
+    }
+
+    public function listar()
+    {
         $query = $this->db->get("produtos");
 
         return $query->result();
     }
-    public function editar($nome=NULL, $preco=NULL, $quantidade=NULL, $id=NULL)
+    public function editar($nome = null, $preco = null, $quantidade = null, $id = null)
     {
-        if ($nome != NULL && $preco != NULL && $quantidade != NULL && $id != NULL){
-            
-            $dados['nome'] = $nome;
-            $dados['preco'] = $preco;
+        if ($nome != null && $preco != null && $quantidade != null && $id != null) {
+
+            $dados['nome']       = $nome;
+            $dados['preco']      = $preco;
             $dados['quantidade'] = $quantidade;
 
-            $this->db->update('produtos',$dados, array('idProduto'=>$id));
+            $this->db->update('produtos', $dados, array('idProduto' => $id));
         }
     }
 
-    public function remover($id=NULL)
+    public function remover($id = null)
     {
-        $this->db->delete('produtos', array('idProduto'=>$id));
+        $this->db->delete('produtos', array('idProduto' => $id));
     }
 
     // public function get_last_ten_entries()
